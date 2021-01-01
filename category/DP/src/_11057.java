@@ -17,12 +17,12 @@ public class _11057 {
 		for(int i=1;i<n;i++) {
 			for(int j=0;j<10;j++) {
 				for(int k=j;k<10;k++) {
-					array[i][j]+=array[i-1][k];
+					array[i][j]=(array[i][j]+array[i-1][k])%10007;
 				}
 			}
 		}
 		for(int i=0;i<10;i++) {
-			result+=array[n-1][i];
+			result=(result+array[n-1][i])%10007;
 		}
 		System.out.println(result);
 	}
