@@ -24,7 +24,6 @@ public class _11055 {
 		
 		Arrays.sort(dp);
 		System.out.println(dp[n]);
-
 	}
 
 }

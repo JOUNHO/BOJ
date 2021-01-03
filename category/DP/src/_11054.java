@@ -32,5 +32,4 @@ public class _11054 {
 		System.out.println(max-1);
 		}
 
-	}https://support.google.com/chrome/answer/95669?hl=ko&co=GENIE.Platform=Desktop
- 	  	
+	}
