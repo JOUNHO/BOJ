@@ -14,7 +14,9 @@ public class _2579 {
 		dp[1]=a[1];
 		if(n>=2)
 		dp[2]=a[1]+a[2];
-
+		if(n==3) {
+			dp[3]=Math.max(a[1]+a[3], Math.max(a[2]+a[3],a[1]+a[2]));
+		}
 		for(int i=3;i<n+1;i++) {
 							//n-1光篮 版快  ,n-2光篮 版快
 			dp[i]=Math.max(a[i-1]+a[i]+dp[i-3], a[i]+dp[i-2]);
