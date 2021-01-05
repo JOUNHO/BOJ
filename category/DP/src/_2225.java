@@ -7,7 +7,6 @@ public class _2225 {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		int k=sc.nextInt();
-
 		int dp[][]=new int[201][201];
 		
 		for(int i=1;i<k+1;i++) {
