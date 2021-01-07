@@ -50,10 +50,7 @@ public class _11650 {
 			for(l=left;l<=right;l++) {
 					a[l][0]=result[l][0];
 					a[l][1]=result[l][1];
-
-			}
-		
-		
+			}			
 	}
 	public static void partition(int left,int right) {
 		int mid;
