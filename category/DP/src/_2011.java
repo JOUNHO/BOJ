@@ -6,41 +6,32 @@ public class _2011 {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		String s=sc.next();
-		long a[]=new long[s.length()];
-		long dp[]=new long[s.length()];
+		long a[]=new long[s.length()+1];
+		long dp[]=new long[s.length()+1];
 		for(int i=0;i<s.length();i++) {
-			a[i]=Integer.parseInt(s.substring(i,i+1));
+			a[i+1]=Integer.parseInt(s.substring(i,i+1));
 		}
-		int count=0;
-		if(a[0]==0) {
-			dp[0]=0;
-		}
-		else {
-		dp[0]=1;
-		}
-		for(int i=1;i<s.length();i++) {
-			
-				if(a[i-1]*10+a[i]<=26&&a[i-1]*10+a[i]>0) {
-					count=1;
-					for(int j=0;j<i-2;j=j+2) {
-						if(a[j]*10+a[j+1]<=26&&a[j]*10+a[j+1]>0) {
-							count++;
-						}
-					}
-
-				}
-				else {
-					System.out.println(0);
-					return ;
-				}
-				if(dp[i]==0) {
-					count=count-1;
-				}
-			dp[i]=(dp[i-1]+count)%1000000;
-			count=0;
-		}
-		System.out.println(dp[s.length()-1]);		
 		
-	}
+		if(a[1]==0) {
+			System.out.println(0);
+			return ;
+		}
+		dp[0]=1;
+		dp[1]=1;
+		for(int i=2;i<s.length()+1;i++) {
+			if(a[i]>0&&a[i]<10){
+				dp[i]=dp[i-1]%1000000;
+			}
+			if((a[i-1]==1&&a[i]>=0&&a[i]<10)||(a[i-1]==2&&a[i]>=0&&a[i]<7)) {
+				dp[i]=(dp[i]+dp[i-2])%1000000;
+			}
 
+			
+			dp[i]=dp[i]%1000000;
+	
+		}
+			System.out.println(dp[s.length()]%1000000);
+
+
+	}
 }
