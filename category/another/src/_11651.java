@@ -1,16 +1,16 @@
 import java.util.*;
 
-class soint implements Comparable<soint>{
+class poin implements Comparable<poin>{
 	int x;
 	int y;
 	
-	soint(int x,int y){
+	poin(int x,int y){
 		this.x=x;
 		this.y=y;
 	}
 
 	@Override
-	public int compareTo(soint point) {
+	public int compareTo(poin point) {
 		if(this.y>point.y) {
 			return 1;
 		}
@@ -33,11 +33,11 @@ public class _11651 {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		int x,y;
-		ArrayList<soint> plist=new ArrayList<>();
+		ArrayList<poin> plist=new ArrayList<>();
 		for(int i=0;i<n;i++) {
 			x=sc.nextInt();
 			y=sc.nextInt();
-			soint point=new soint(x,y);
+			poin point=new poin(x,y);
 			plist.add(point);
 		}
 		Collections.sort(plist);
