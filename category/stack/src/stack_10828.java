@@ -1,20 +1,22 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class stack_10828 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		
-		int i=sc.nextInt(); //명령 수
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int i=Integer.parseInt(br.readLine()); //명령 수
 		int top=-1;
-		int[] stack=new int[i];
+		String[] stack=new String[i];
 		for(int j=0;j<i;j++) {
-			String s=sc.next();
+			String[] s=br.readLine().split(" ");;
 			
-			switch (s) {
+			switch (s[0]) {
 			case "push":
 				top++;
-				stack[top]=sc.nextInt();
+				stack[top]=s[1];
 				break;
 			
 			case "pop":
