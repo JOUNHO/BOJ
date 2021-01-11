@@ -1,24 +1,39 @@
-import java.io.*;
+import java.util.Scanner;
 
 public class _9012 {
-	public static void main(String args[]) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
-		
-		while(N-->0) {
-			String s = br.readLine();
-			int x = 0;
-			for(int i = 0; i<s.length(); ++i) {
-				if(s.charAt(i) == '(') x++;
-				else {
-					x--;
-					if(x<0) break;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		int left=0;
+		int right=0;
+		String[] s=new String[t];
+		for(int i=0;i<t;i++) {
+			s[i]=sc.next();
+		}
+		for(int i=0;i<t;i++) {
+			for(int j=0;j<s[i].length();j++) {
+				if(s[i].charAt(j)=='(') {
+					left++;
+				}
+				else if(s[i].charAt(j)==')') {
+					right++;
+				}
+				if(right>left) {
+					System.out.println("NO");
+					break;
 				}
 			}
-			
-			if(x == 0) System.out.println("YES");
-			else System.out.println("NO");
+			if(left==right) {
+				System.out.println("YES");
+			}
+			else if(left>right){
+				System.out.println("NO");
+			}
+			left=0;
+			right=0;
 		}
-		
 	}
+
 }
