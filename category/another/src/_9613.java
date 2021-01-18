@@ -9,7 +9,7 @@ public class _9613 {
 		for(int i=0;i<n;i++) {
 			int t=sc.nextInt();
 			int a[]=new int[t];
-			int sum=0;
+			long sum=0;
 			for(int p=0;p<t;p++) {
 				a[p]=sc.nextInt();
 			}
